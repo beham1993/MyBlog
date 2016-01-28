@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+		<!-- Post -->
+
+	<div id="page">
+	
+		<div id="header_about" class="clearfix">
+			
+			<h1>{% trans "Савич Міша" %}</h1>
+				
+		</div><!-- header end -->
+			
+		<div class="content-innertube">
+			
+			<div id="about" class="clearfix">
+			
+				<img src="{% static 'images/mish.jpg' %}" alt="" title="">
+
+				<div class="right-block">
+					<div class="clearfix"><h2 class="few_about">{% trans "Кілька слів про мене" %}</h2></div>
+				
+					<p class="about-text clearfix">{% trans "Мені 22, студент географічного факультету КНУ ім. Т. Шевченко. Мої зацікавлення: ІТ, економіка, зокрема маркетинг, іноземні мови. Маю досвід роботи на посаді веб-розробника. Люблю фізичну активність і спорт в цілому. Добре граю у футбол, займаюсь бальними танцями." %}</p>
+				
+					<blockquote class="about-me">
+						<div class="quote-top"></div>
+						&#8220;Треба працювати не 12 годин, а головою. &#8220;
+						<p class="quote-author">Стів Джобс <!--<a href="#" title="">Web Design Studio</a>--></p>
+					</blockquote>
+				</div>
+				
+
+				
+			</div><!-- about end -->
+					
+			<div id="about-middle" class="clearfix">
+				
+				<div id="content-left">
+					
+					<h2 class="few_about">{% trans "Мої навички" %}</h2>
+					
+						<ul id="chart">
+							<li class="five">Windows</li>
+							<li class=" three">Linux</li>
+							<li class="three">Photoshop</li>
+							<li class="two">Illustrator</li>
+							<li class="five">HTML</li>
+							<li class="four">CSS</li>
+							<li class="two">JavaScript</li>
+							<li class="three">Python</li>
+							<li class="three">Django</li>
+						</ul>
+						
+						<div id="axis"></div>
+					
+				</div><!-- content-left end -->
+					
+				<div id="content-right">
+					
+					<div class="clearfix"><h2 class="few_about">{% trans "Що я можу" %}</h2></div>
+					
+						<ul id="check">
+							<li>Верстка веб-сайтів з макетів: фіксована, резинова, гібридна.</li>
+							<li>Верстка HTML листів.</li>
+							<li>Написання простого back-end на Python.</li>
+							<li class="last">Адміністрування та підтримка веб-сайтів.</li>
+						</ul>
+					
+				</div><!-- content-right end -->
+				
+			</div><!-- about-middle end -->
+			
+		</div><!-- content-innertube end -->
+		
+	</div><!-- page end -->
+
+{% endblock content %}

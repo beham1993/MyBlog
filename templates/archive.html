@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+		<!-- Post -->
+
+			{% for article in object_list %}
+			<div class="block_archive">
+				<span class="date"><span class="month">{{ article.date_of_article|date:"M"}}<span>ень</span></span> <span class="day">{{ article.date_of_article|date:"d"}}</span><span class="year">, {{ article.date_of_article|date:"Y"}}</span></span>
+				<a href="{{ article.get_absolute_url }}" ><img class="image_archive" src="{{ article.article_image.url }}" alt="" /></a>
+				<h2 class="head_archive"><a href="{{ article.get_absolute_url }}">{{ article.head }}</a></h2>
+			</div>
+			{% endfor %}
+
+{% endblock content %}
+
+{% block quote %}
+	<section class="box text-style1">
+		<div class="inner">
+			<p>
+				<strong>{% trans "Цитатник" %}:</strong> {{ quote.quote_text }}<br><a class="author quote" href="#">{{ quote.quote_author }}</a>
+			</p>
+		</div>
+	</section>
+{% endblock quote %}

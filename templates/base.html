@@ -1,0 +1,222 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Scape of mind</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{% static 'js/ie/html5shiv.js' %}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'css/ie8.css' %}" /><![endif]-->
+
+	    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	    <link rel="stylesheet" href="/resources/demos/style.css">
+	    <script>
+	    $(function() {
+	      $( "#datepicker" ).datepicker();
+	    });
+	    </script>
+	</head>
+	<body>
+
+		<!-- Content -->
+			<div id="content">
+				<div class="inner">
+
+					{% block content %}{% endblock content %}
+
+					<!-- Pagination -->
+						<div class="pagination">
+							{% if is_paginated %}
+	        					{% if page_obj.has_previous %}
+									<a href="?page={{ page_obj.previous_page_number }}" class="button previous">{% trans "Попередня сторінка" %}</a>
+									<div class="pages">
+										<a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+									</div>
+								{% endif %}
+								<div class="pages">
+									
+									<a href="#" class="active">{{ page_obj.number }}</a>
+										<!--
+										<a href="#"></a>
+										<span>&hellip;</span>
+										<a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+										-->
+								</div>
+								{% if page_obj.has_next %}
+									<div class="pages">
+										<a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+									</div>
+									<a href="?page={{ page_obj.next_page_number }}" class="button next">{% trans "Наступна сторінка" %}</a>
+								{% endif %}
+							{% endif %}
+						</div>
+
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href={% url 'index'%}>Scape of mind</a></h1>
+
+					<div class="lang">
+					<form id='lang_en' action='/i18n/setlang/' method='POST'>{% csrf_token %}
+					<input type='hidden' name='language' value='en'/>
+					<a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
+					<img src="{% static 'images/flag/en.png' %}"/>
+					</a>
+					</form>
+					<form id='lang_uk' action='/i18n/setlang/' method='POST'>{% csrf_token %}
+					<input type='hidden' name='language' value='uk'/>
+					<a href='#' title='Українська' onclick="document.getElementById('lang_uk').submit()">
+					<img src="{% static 'images/flag/uk.png' %}"/>
+					</a>
+					</form>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav" style="clear:both;">
+						<ul class="nav_up">
+
+								<li class="first"><a href={% url 'index' %}>{% trans "Останні статті" %}</a></li>
+
+								<li class="second"><a href={% url 'archive' %}>{% trans "Архіви" %}</a></li>
+							
+								<li class="third"><a href={% url 'about_me' %}>{% trans "Про мене" %}</a></li>
+
+								<!--<li class="forth"><a href="#">{% trans "Мої контакти" %}</a></li>-->
+
+						</ul>
+					</nav>
+
+				<!-- Search -->
+					<!--
+					<section class="box search">
+						<form method="post" action="#">
+							<input type="text" class="text" name="search" placeholder="Search" />
+						</form>
+					</section>
+					-->
+
+				<!-- Text -->
+				{% block quote %}{% endblock quote %}
+
+
+				<!-- Recent Posts -->
+					<section class="box recent-posts">
+						<header>
+							<h2 class="recent_header">{% trans "Останні записи" %}</h2>
+						</header>
+						<nav id="nav">
+							<ul>
+								{% for i in last_article %}	
+								<li><a class = "recent_post" href="#">{{ i.head }}</a></li>
+								{% endfor %}
+							</ul>
+						</nav>
+					</section>
+
+				<!-- Recent Comments 
+					<section class="box recent-comments">
+						<header>
+							<h2>Recent Comments</h2>
+						</header>
+						<ul>
+							<li>case on <a href="#">Lorem ipsum dolor</a></li>
+							<li>molly on <a href="#">Sed dolore magna</a></li>
+							<li>case on <a href="#">Sed dolore magna</a></li>
+						</ul>
+					</section>
+				-->
+
+				<!-- Calendar -->
+				<!--
+					<section class="box calendar">
+						<div class="inner">
+							<table>
+								<caption>July 2014</caption>
+								<thead>
+									<tr>
+										<th scope="col" title="Monday">M</th>
+										<th scope="col" title="Tuesday">T</th>
+										<th scope="col" title="Wednesday">W</th>
+										<th scope="col" title="Thursday">T</th>
+										<th scope="col" title="Friday">F</th>
+										<th scope="col" title="Saturday">S</th>
+										<th scope="col" title="Sunday">S</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="4" class="pad"><span>&nbsp;</span></td>
+										<td><span>1</span></td>
+										<td><span>2</span></td>
+										<td><span>3</span></td>
+									</tr>
+									<tr>
+										<td><span>4</span></td>
+										<td><span>5</span></td>
+										<td><a href="#">6</a></td>
+										<td><span>7</span></td>
+										<td><span>8</span></td>
+										<td><span>9</span></td>
+										<td><a href="#">10</a></td>
+									</tr>
+									<tr>
+										<td><span>11</span></td>
+										<td><span>12</span></td>
+										<td><span>13</span></td>
+										<td class="today"><a href="#">14</a></td>
+										<td><span>15</span></td>
+										<td><span>16</span></td>
+										<td><span>17</span></td>
+									</tr>
+									<tr>
+										<td><span>18</span></td>
+										<td><span>19</span></td>
+										<td><span>20</span></td>
+										<td><span>21</span></td>
+										<td><span>22</span></td>
+										<td><a href="#">23</a></td>
+										<td><span>24</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">25</a></td>
+										<td><span>26</span></td>
+										<td><span>27</span></td>
+										<td><span>28</span></td>
+										<td class="pad" colspan="3"><span>&nbsp;</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					-->
+
+				<!-- Copyright -->
+					<ul id="copyright">
+						<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src={% static 'js/jquery.min.js' %}></script>
+			<script src={% static 'js/skel.min.js' %}></script>
+			<script src={% static 'js/util.js' %}></script>
+			<!--[if lte IE 8]><script src={% static 'js/ie/respond.min.js' %}></script><![endif]-->
+			<script src={% static 'js/main.js' %}></script>
+			<script src={% static 'js/my.js' %}></script>
+	</body>
+</html>
