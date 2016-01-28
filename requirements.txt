@@ -1,3 +1,6 @@
-django==1.7
-pillow
-ckeditor
+Django==1.7
+django-ckeditor==5.0.2
+django-transmeta==0.7.3
+Pillow==3.1.0
+pycparser==2.14
+wheel==0.24.0
