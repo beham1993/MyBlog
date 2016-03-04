@@ -8,8 +8,8 @@
 -->
 <html>
 	<head>
-		<title>Scape of mind</title>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<title>Scapemind</title>
+		<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="{% static 'js/ie/html5shiv.js' %}"></script><![endif]-->
@@ -68,20 +68,20 @@
 			<div id="sidebar">
 
 				<!-- Logo -->
-					<h1 id="logo"><a href={% url 'index'%}>Scape of mind</a></h1>
+					<h1 id="logo"><a href={% url 'index'%}>Scapemind</a></h1>
 
 					<div class="lang">
 					<form id='lang_en' action='/i18n/setlang/' method='POST'>{% csrf_token %}
-					<input type='hidden' name='language' value='en'/>
-					<a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
-					<img src="{% static 'images/flag/en.png' %}"/>
-					</a>
+						<input type='hidden' name='language' value='en'/>
+						<a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
+							<img src="{% static 'images/flag/en.png' %}"/>
+						</a>
 					</form>
 					<form id='lang_uk' action='/i18n/setlang/' method='POST'>{% csrf_token %}
-					<input type='hidden' name='language' value='uk'/>
-					<a href='#' title='Українська' onclick="document.getElementById('lang_uk').submit()">
-					<img src="{% static 'images/flag/uk.png' %}"/>
-					</a>
+						<input type='hidden' name='language' value='uk'/>
+						<a href='#' title='Українська' onclick="document.getElementById('lang_uk').submit()">
+							<img src="{% static 'images/flag/uk.png' %}"/>
+						</a>
 					</form>
 					</div>
 
@@ -93,7 +93,7 @@
 
 								<li class="second"><a href={% url 'archive' %}>{% trans "Архіви" %}</a></li>
 							
-								<li class="third"><a href={% url 'about_me' %}>{% trans "Про мене" %}</a></li>
+								<li class="third"><a href={% url 'about_me' %}>{% trans "Мої контакти" %}</a></li>
 
 								<!--<li class="forth"><a href="#">{% trans "Мої контакти" %}</a></li>-->
 
@@ -116,7 +116,7 @@
 				<!-- Recent Posts -->
 					<section class="box recent-posts">
 						<header>
-							<h2 class="recent_header">{% trans "Останні записи" %}</h2>
+							<h2 class="recent_header">{% trans "Останні статті" %}</h2>
 						</header>
 						<nav id="nav">
 							<ul>

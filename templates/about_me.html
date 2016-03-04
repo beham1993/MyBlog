@@ -19,22 +19,30 @@
 				<img src="{% static 'images/mish.jpg' %}" alt="" title="">
 
 				<div class="right-block">
-					<div class="clearfix"><h2 class="few_about">{% trans "Кілька слів про мене" %}</h2></div>
+					<div class="clearfix"><h2 class="few_about">{% trans "Мої контакти" %}</h2></div>
 				
-					<p class="about-text clearfix">{% trans "Мені 22, студент географічного факультету КНУ ім. Т. Шевченко. Мої зацікавлення: ІТ, економіка, зокрема маркетинг, іноземні мови. Маю досвід роботи на посаді веб-розробника. Люблю фізичну активність і спорт в цілому. Добре граю у футбол, займаюсь бальними танцями." %}</p>
+					<p class="about-text clearfix">
+						<ul class="my_contacts">
+							<li><span>Mail:</span><a href="mailto:beham1993@gmail.com">beham1993@gmail.com</a></li>
+							<li><span>VK:</span><a href="https://vk.com/beham3">https://vk.com/beham3</a></li>
+							<li><span>Facebook:</span><a href="https://www.facebook.com/kolia.poplavok">https://www.facebook.com/kolia.poplavok</a></li>
+							<li><span>{% trans "Місто проживання" %}:</span>{% trans "Київ" %}</li>
+							<li><span>{% trans "Хоббі" %}:</span>{% trans "спорт, програмування, іноземні мови, маркетинг" %}</li>
+						</ul>
+					</p>
 				
-					<blockquote class="about-me">
+					<!--<blockquote class="about-me">
 						<div class="quote-top"></div>
 						&#8220;Треба працювати не 12 годин, а головою. &#8220;
-						<p class="quote-author">Стів Джобс <!--<a href="#" title="">Web Design Studio</a>--></p>
-					</blockquote>
+						<p class="quote-author">Стів Джобс <a href="#" title="">Web Design Studio</a></p>
+					</blockquote>-->
 				</div>
 				
 
 				
 			</div><!-- about end -->
 					
-			<div id="about-middle" class="clearfix">
+			<!--<div id="about-middle" class="clearfix">
 				
 				<div id="content-left">
 					
@@ -54,9 +62,9 @@
 						
 						<div id="axis"></div>
 					
-				</div><!-- content-left end -->
+				</div>--><!-- content-left end -->
 					
-				<div id="content-right">
+				<!--<div id="content-right">
 					
 					<div class="clearfix"><h2 class="few_about">{% trans "Що я можу" %}</h2></div>
 					
@@ -67,7 +75,7 @@
 							<li class="last">Адміністрування та підтримка веб-сайтів.</li>
 						</ul>
 					
-				</div><!-- content-right end -->
+				</div>--><!-- content-right end -->
 				
 			</div><!-- about-middle end -->
 			
@@ -76,3 +84,13 @@
 	</div><!-- page end -->
 
 {% endblock content %}
+
+{% block quote %}
+	<section class="box text-style1">
+		<div class="inner">
+			<p>
+				<strong>{% trans "Цитата" %}:</strong> {{ quote.quote_text }}<br><a class="author quote" href="{{ quote.author_url }}">{{ quote.quote_author }}</a>
+			</p>
+		</div>
+	</section>
+{% endblock quote %}
