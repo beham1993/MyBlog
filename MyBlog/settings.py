@@ -102,7 +102,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://46.101.227.232:80/media/'
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
 
 
 # Static files (CSS, JavaScript, Images)

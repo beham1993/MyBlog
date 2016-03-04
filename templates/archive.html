@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% block content %}
 		<!-- Post -->
-			<h3>{% trans "Архів статей" %}:</h3>
+			<h2 class="few_about">{% trans "Архів статей" %}:</h2>
 			{% for article in object_list %}
 			<div class="block_archive">
 				<span class="date"><span class="day">{{ article.date_of_article|date:"d"}}</span><span class="month">{{ article.date_of_article|date:"E"}}</span><span class="year">, {{ article.date_of_article|date:"Y"}}</span></span>

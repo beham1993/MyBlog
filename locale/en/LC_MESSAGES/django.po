@@ -73,3 +73,7 @@ msgstr "Archive"
 #: templates/index.html:43
 msgid "Читати далі..."
 msgstr "Read more..."
+
+#: templates/archive.html:10
+msgid "Архів статей"
+msgstr "Archive articles"
