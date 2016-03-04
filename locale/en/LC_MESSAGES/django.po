@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-04 20:27+0200\n"
+"POT-Creation-Date: 2016-03-05 01:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,10 @@ msgstr ""
 msgid "Цитата"
 msgstr "Quote"
 
+#: templates/archive.html:6
+msgid "Архів статей"
+msgstr "Archive articles"
+
 #: templates/base.html:41
 msgid "Попередня сторінка"
 msgstr "Previous page"
@@ -62,7 +66,7 @@ msgstr "Previous page"
 msgid "Наступна сторінка"
 msgstr "Next page"
 
-#: templates/base.html:92
+#: templates/base.html:92 templates/base.html.py:119
 msgid "Останні статті"
 msgstr "Last posts"
 
@@ -73,7 +77,3 @@ msgstr "Archive"
 #: templates/index.html:43
 msgid "Читати далі..."
 msgstr "Read more..."
-
-#: templates/archive.html:10
-msgid "Архів статей"
-msgstr "Archive articles"
