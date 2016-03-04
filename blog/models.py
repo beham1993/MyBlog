@@ -39,8 +39,13 @@ class Person(models.Model):
 		return self.name
 
 class Quote(models.Model):
+	__metaclass__ = TransMeta
 	quote_text = models.TextField(max_length=256, verbose_name=u"Текст цитати")
 	quote_author = models.CharField(max_length=128, verbose_name=u"Автор цитати")
+	author_url = models.URLField(verbose_name=u"Стаття про автора", default='vk.com')
+
 	def __unicode__(self):
 		return self.quote_author
 
+	class Meta:
+		translate = ('quote_text', 'quote_author')
