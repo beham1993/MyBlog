@@ -63,9 +63,9 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-	'USER': 'django',
-	'PASSWORD': 'RghzeqRTMc',
+        'NAME': 'scapedb',
+	'USER': 'beham',
+	'PASSWORD': 'beham333',
 	'HOST': 'localhost',
 	'PORT': '',
     }
@@ -97,7 +97,7 @@ USE_TZ = True
 # Upload Media
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = "/home/django/MyBlog/MyBlog/media"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -124,7 +124,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/django/MyBlog/MyBlog/assets",
+    os.path.join(BASE_DIR, 'assets'),
 )
 
 STATICFILES_FINDERS = (
