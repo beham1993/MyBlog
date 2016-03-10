@@ -65,7 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django',
 	'USER': 'django',
-	'PASSWORD': 'GKcdmAj70W',
+	'PASSWORD': 'RghzeqRTMc',
 	'HOST': 'localhost',
 	'PORT': '',
     }
@@ -97,12 +97,12 @@ USE_TZ = True
 # Upload Media
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = "/home/beham/Django/MyBlog/MyBlog/media"
+MEDIA_ROOT = "/home/django/MyBlog/MyBlog/media"
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = 'http://46.101.199.68:80/media/'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -124,7 +124,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/beham/Django/MyBlog/MyBlog/assets",
+    "/home/django/MyBlog/MyBlog/assets",
 )
 
 STATICFILES_FINDERS = (

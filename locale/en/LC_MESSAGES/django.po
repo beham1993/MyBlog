@@ -26,7 +26,7 @@ msgid "Мої контакти"
 msgstr "My contacts"
 
 #: templates/about_me.html:29
-msgid "Місто проживання"
+msgid "Місто"
 msgstr "City"
 
 #: templates/about_me.html:29
