@@ -72,23 +72,31 @@
 
 				<!-- Authorization -->
 					<div class="authorization">
-						<form id="login-form" action="/login_check" method="POST" novalidate>
-					    <div class="social-signin vkontakte-signin">
-					        <a href="https://www.blablacar.com.ua/connect/vkontakte" class="btn-social btn-vkontakte white js-oauth-connect" data-provider="vkontakte">
-					            <i class="bbc-icon2-vkontakte-logo size26 first white push-left" aria-hidden="true"></i>
-					            Увійти з VK
-					        </a>
-					    </div>
-
-					    <div class="social-signin facebook-signin">
-					        <a href="{% url 'socialauth_begin' 'facebook' %}" class="btn-social btn-facebook white js-oauth-connect" data-provider="facebook">
-					            <i class="bbc-icon2-facebook-logo size26 first white push-left" aria-hidden="true"></i>
-					            Увійти з Facebook
-					        </a>
-					    </div>
-					    
-					    </form>
+						 <p>
+						   <ul>
+						   {% if user and not user.is_anonymous %}
+						     <li>
+						       <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+						     </li>
+						     <li>
+						       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+						     </li>
+						   {% else %}
+						     <li>
+						       <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+						     </li>
+						     <li>
+						       <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with VK</a>
+						     </li>
+						     <li>
+						       <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+						     </li>
+						   {% endif %}
+						   </ul>
+						 </p>
 					</div>
+
+
 
 
 				<!-- Languages -->
@@ -234,6 +242,23 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+			  window.fbAsyncInit = function() {
+			    FB.init({
+			      appId      : '1702331996691938',
+			      xfbml      : true,
+			      version    : 'v2.5'
+			    });
+			  };
+
+			  (function(d, s, id){
+			     var js, fjs = d.getElementsByTagName(s)[0];
+			     if (d.getElementById(id)) {return;}
+			     js = d.createElement(s); js.id = id;
+			     js.src = "//connect.facebook.net/en_US/sdk.js";
+			     fjs.parentNode.insertBefore(js, fjs);
+			   }(document, 'script', 'facebook-jssdk'));
+			</script>
 			<script src={% static 'js/jquery.min.js' %}></script>
 			<script src={% static 'js/skel.min.js' %}></script>
 			<script src={% static 'js/util.js' %}></script>
