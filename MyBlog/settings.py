@@ -63,9 +63,9 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'scapedb',
-	'USER': 'beham',
-	'PASSWORD': 'beham333',
+        'NAME': 'django',
+	'USER': 'django',
+	'PASSWORD': 'RghzeqRTMc',
 	'HOST': 'localhost',
 	'PORT': '',
     }
