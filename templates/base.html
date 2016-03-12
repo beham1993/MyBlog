@@ -70,6 +70,28 @@
 				<!-- Logo -->
 					<h1 id="logo"><a href={% url 'index'%}>Scapemind</a></h1>
 
+				<!-- Authorization -->
+					<div class="authorization">
+						<form id="login-form" action="/login_check" method="POST" novalidate>
+					    <div class="social-signin vkontakte-signin">
+					        <a href="https://www.blablacar.com.ua/connect/vkontakte" class="btn-social btn-vkontakte white js-oauth-connect" data-provider="vkontakte">
+					            <i class="bbc-icon2-vkontakte-logo size26 first white push-left" aria-hidden="true"></i>
+					            Увійти з VK
+					        </a>
+					    </div>
+
+					    <div class="social-signin facebook-signin">
+					        <a href="{% url 'socialauth_begin' 'facebook' %}" class="btn-social btn-facebook white js-oauth-connect" data-provider="facebook">
+					            <i class="bbc-icon2-facebook-logo size26 first white push-left" aria-hidden="true"></i>
+					            Увійти з Facebook
+					        </a>
+					    </div>
+					    
+					    </form>
+					</div>
+
+
+				<!-- Languages -->
 					<div class="lang">
 					<form id='lang_en' action='/i18n/setlang/' method='POST'>{% csrf_token %}
 						<input type='hidden' name='language' value='en'/>
