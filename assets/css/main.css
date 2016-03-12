@@ -2413,6 +2413,27 @@
 				background-color: #f4f4f4;
 				opacity: 1.0;
 			}
+		/* Athorization */
+			.social-signin{
+				width: 100%;
+				border-radius: 0.5em;
+				box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
+				min-width: 180px;
+				padding: 4px 0px 4px 6px;
+				font-size: 16px;
+				text-align: center;
+
+			}
+
+				.vkontakte-signin{
+					background: #4b77a1;
+					margin: 14px 0px 8px;
+				}
+
+				.facebook-signin{
+					background: #3b5998;
+					margin: 16px 0px 2px;
+				}
 
 		/* Logo */
 
