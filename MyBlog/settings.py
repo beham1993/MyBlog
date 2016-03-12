@@ -28,45 +28,6 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/members/'
-LOGIN_ERROR_URL = '/login-error/'
-
-
-AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.twitter.TwitterBackend',
-    'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.contrib.vk.VKOAuth2Backend',
-    'django.contrib.auth.backends.ModelBackend',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request',
-    'social_auth.context_processors.social_auth_by_type_backends',
-)
-
-
-import random
-# Если имя не удалось получить, то можно его сгенерировать
-SOCIAL_AUTH_DEFAULT_USERNAME = lambda: random.choice(['Darth_Vader', 'Obi-Wan_Kenobi', 'R2-D2', 'C-3PO', 'Yoda'])
-# Разрешаем создавать пользователей через social_auth
-SOCIAL_AUTH_CREATE_USERS = True
-
-SOCIAL_AUTH_UID_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
-SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
-
-SOCIAL_AUTH_ENABLED_BACKENDS = ('twitter', 'vk', 'facebook',)
-
-
-FACEBOOK_APP_ID = '948779365230332'
-FACEBOOK_API_SECRET = '3f5bfa2110ebb5d61b63b9e76a398e0f'  
-
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -78,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',
-    'social_auth',
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,7 +53,44 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+   'django.contrib.auth.context_processors.auth',
+   'django.core.context_processors.debug',
+   'django.core.context_processors.i18n',
+   'django.core.context_processors.media',
+   'django.core.context_processors.static',
+   'django.core.context_processors.tz',
+   'django.contrib.messages.context_processors.messages',
+   'social.apps.django_app.context_processors.backends',
+   'social.apps.django_app.context_processors.login_redirect',
+)
+
+AUTHENTICATION_BACKENDS = (
+   'social.backends.facebook.FacebookOAuth2',
+   'social.backends.google.GoogleOAuth2',
+   'social.backends.twitter.TwitterOAuth',
+   'django.contrib.auth.backends.ModelBackend',
+)
+
 ROOT_URLCONF = 'MyBlog.urls'
+
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 
 WSGI_APPLICATION = 'MyBlog.wsgi.application'
 
@@ -186,3 +184,9 @@ TEMPLATE_DIRS = (
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+
+LOGIN_REDIRECT_URL = '/MyBlog'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '948779365230332'
+SOCIAL_AUTH_FACEBOOK_SECRET = '3f5bfa2110ebb5d61b63b9e76a398e0f'

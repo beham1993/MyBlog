@@ -1,6 +1,12 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from blog.models import Article, Person, Quote
 import random
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
+
+def home(request):
+   context = RequestContext(request, {'request': request, 'user': request.user})
+   return render_to_response('home.html', context_instance=context)
 
 
 class ArticleListView(ListView):
