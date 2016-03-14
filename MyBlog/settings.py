@@ -101,9 +101,9 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-	'USER': 'django',
-	'PASSWORD': 'RghzeqRTMc',
+        'NAME': 'scapedb',
+	'USER': 'beham',
+	'PASSWORD': 'beham333',
 	'HOST': 'localhost',
 	'PORT': '',
     }
@@ -190,3 +190,6 @@ LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '948779365230332'
 SOCIAL_AUTH_FACEBOOK_SECRET = '3f5bfa2110ebb5d61b63b9e76a398e0f'
+
+TWITTER_CONSUMER_KEY = 'oiLbIPIjoQQFmnJXVBqVQuECs'
+TWITTER_CONSUMER_SECRET = '3RAa2QJ7I1PTwc6uyxdF7gTPDWnn7KkV8oSpYcdBeh4eE0zfWf'
