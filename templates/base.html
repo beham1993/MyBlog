@@ -70,35 +70,6 @@
 				<!-- Logo -->
 					<h1 id="logo"><a href={% url 'index'%}>Scapemind</a></h1>
 
-				<!-- Authorization -->
-					<div class="authorization">
-						 <p>
-						   <ul>
-						   {% if user and not user.is_anonymous %}
-						     <li>
-						       <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-						     </li>
-						     <li>
-						       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
-						     </li>
-						   {% else %}
-						     <li>
-						       <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
-						     </li>
-						     <li>
-						       <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with VK</a>
-						     </li>
-						     <li>
-						       <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
-						     </li>
-						   {% endif %}
-						   </ul>
-						 </p>
-					</div>
-
-
-
-
 				<!-- Languages -->
 					<div class="lang">
 					<form id='lang_en' action='/i18n/setlang/' method='POST'>{% csrf_token %}
@@ -114,6 +85,25 @@
 						</a>
 					</form>
 					</div>
+
+
+				<!-- Authorization -->
+
+						<ul class="authorization">
+							{% if user and not user.is_anonymous %}
+						    <li class="first">
+						        <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+						    </li>
+						    <li class="second">
+						        <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+						    </li>
+						    {% else %}
+						    <li class="first">
+						        <a class="social-authorization facebook" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><img src="{% static 'images/vk.jpg' %}"></a><a class="social-authorization vk" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}"><img src="{% static 'images/vk.jpg' %}"></a><a class="social-authorization twitter" href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"><img src="{% static 'images/vk.jpg' %}"></a>
+						    </li>
+						    {% endif %}
+						</ul>
+
 
 				<!-- Nav -->
 					<nav id="nav" style="clear:both;">
@@ -139,6 +129,7 @@
 					</section>
 					-->
 
+
 				<!-- Text -->
 				{% block quote %}{% endblock quote %}
 
@@ -151,7 +142,7 @@
 						<nav id="nav">
 							<ul>
 								{% for i in last_article %}	
-								<li><a class = "recent_post" href="#">{{ i.head }}</a></li>
+								<li><a class = "recent_post" href="{{ i.get_absolute_url }}">{{ i.head }}</a></li>
 								{% endfor %}
 							</ul>
 						</nav>
@@ -242,23 +233,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<script>
-			  window.fbAsyncInit = function() {
-			    FB.init({
-			      appId      : '1702331996691938',
-			      xfbml      : true,
-			      version    : 'v2.5'
-			    });
-			  };
-
-			  (function(d, s, id){
-			     var js, fjs = d.getElementsByTagName(s)[0];
-			     if (d.getElementById(id)) {return;}
-			     js = d.createElement(s); js.id = id;
-			     js.src = "//connect.facebook.net/en_US/sdk.js";
-			     fjs.parentNode.insertBefore(js, fjs);
-			   }(document, 'script', 'facebook-jssdk'));
-			</script>
 			<script src={% static 'js/jquery.min.js' %}></script>
 			<script src={% static 'js/skel.min.js' %}></script>
 			<script src={% static 'js/util.js' %}></script>
