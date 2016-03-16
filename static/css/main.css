@@ -87,6 +87,27 @@
 
 	@media screen and (min-width: 737px) {
 
+		.lang{
+			height:55px;
+		}
+
+		#lang_en {
+			float:left;
+			margin: 15px 15px 0px 38px;
+		}
+		#lang_uk {
+			float:left;
+			margin: 15px 15px 0px 20px;
+		}
+
+		#lang_uk a img {
+			width:42px;
+		}
+
+		#lang_en a img {
+			width:42px;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 125%;
@@ -112,6 +133,27 @@
 	}
 
 	@media screen and (min-width: 1201px) {
+
+		.lang{
+			height:55px;
+		}
+
+		#lang_en {
+			float:left;
+			margin: 15px 15px 0px 34px;
+		}
+		#lang_uk {
+			float:left;
+			margin: 15px 15px 0px 20px;
+		}
+
+		#lang_uk a img {
+			width:48px;
+		}
+
+		#lang_en a img {
+			width:48px;
+		}
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -139,6 +181,27 @@
 
 	@media screen and (min-width: 737px) and (max-width: 1200px) {
 
+		.lang{
+			height:55px;
+		}
+
+		#lang_en {
+			float:left;
+			margin: 15px 15px 0px 30px;
+		}
+		#lang_uk {
+			float:left;
+			margin: 15px 15px 0px 20px;
+		}
+
+		#lang_uk a img {
+			width:44px;
+		}
+
+		#lang_en a img {
+			width:44px;
+		}
+
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 125%;
@@ -164,6 +227,28 @@
 	}
 
 	@media screen and (min-width: 737px) and (max-width: 1000px) {
+
+		.lang{
+			height:55px;
+			margin-top:-20px;
+		}
+
+		#lang_en {
+			float:left;
+			margin: 15px 15px 0px 38px;
+		}
+		#lang_uk {
+			float:left;
+			margin: 15px 15px 0px 20px;
+		}
+
+		#lang_uk a img {
+			width:48px;
+		}
+
+		#lang_en a img {
+			width:48px;
+		}
 
 		.container.\31 25\25 {
 			width: 100%;
@@ -192,7 +277,25 @@
 	@media screen and (max-width: 736px) {
 
 		.lang{
-			height:40px;
+			height:50px;
+			margin-top:-14px;
+		}
+
+		#lang_en {
+			float:left;
+			margin: 15px 15px 0px 20px;
+		}
+		#lang_uk {
+			float:left;
+			margin: 15px 15px 0px 20px;
+		}
+
+		#lang_uk a img {
+			width:40px;
+		}
+
+		#lang_en a img {
+			width:40px;
 		}
 
 		.container.\31 25\25 {
@@ -2241,7 +2344,7 @@
 
 		#sidebar section, #sidebar nav {
 			position: relative;
-			margin: 2em 0 0 0;
+			margin: 1em 0 0 0;
 			font-size: 0.9em;
 		}
 
@@ -2254,7 +2357,7 @@
 				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
 				display: block;
 				height: 0.5em;
-				margin: 0 0 2em 0;
+				margin: 0 0 1em 0;
 			}
 
 		#sidebar strong, #sidebar b {
@@ -2414,26 +2517,41 @@
 				opacity: 1.0;
 			}
 		/* Athorization */
-			.social-signin{
-				width: 100%;
-				border-radius: 0.5em;
-				box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
-				min-width: 180px;
-				padding: 4px 0px 4px 6px;
-				font-size: 16px;
-				text-align: center;
-
+			.authorization{
+				height:66px;
 			}
 
-				.vkontakte-signin{
-					background: #4b77a1;
-					margin: 14px 0px 8px;
+			.authorization:before{
+				content: '';
+				border-top: solid 1px;
+				border-bottom: solid 1px;
+				border-color: #171E29;
+				border-color: rgba(0, 0, 0, 0.25);
+				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
+				display: block;
+				height: 0.5em;
+				margin: 1em 0 1em 0;
+			}
+
+				.social-authorization{
+					width:48px;
+					height:48px;
+					display: inline-block;
+					margin-left:0.7em;
+
 				}
 
-				.facebook-signin{
-					background: #3b5998;
-					margin: 16px 0px 2px;
+				.social-vk{
+					background: url("images/social.png") -78px -18px;
 				}
+				.social-fb{
+					background: url("images/social.png") -140px -18px;
+				}
+				.social-tw{
+					background: url("images/social.png") -17px -18px;
+				}
+
+
 
 		/* Logo */
 
@@ -2655,6 +2773,41 @@
 				float:left;
 			}
 
+		/* Athorization */
+			.authorization{
+				height:62px;
+			}
+
+			.authorization:before{
+				content: '';
+				border-top: solid 1px;
+				border-bottom: solid 1px;
+				border-color: #171E29;
+				border-color: rgba(0, 0, 0, 0.25);
+				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
+				display: block;
+				height: 0.5em;
+				margin: 1em 0 0.7em 0;
+			}
+
+				.social-authorization{
+					width:48px;
+					height:48px;
+					display: inline-block;
+					margin-left:0.8em;
+
+				}
+
+				.social-vk{
+					background: url("images/social.png") -78px -18px;
+				}
+				.social-fb{
+					background: url("images/social.png") -140px -18px;
+				}
+				.social-tw{
+					background: url("images/social.png") -17px -18px;
+				}
+
 	}
 
 /* Narrow */
@@ -2809,10 +2962,6 @@
 				margin-top: 0 !important;
 			}
 
-				#nav:before {
-					display: none !important;
-				}
-
 				#nav li:hover a {
 					background: none;
 				}
@@ -2822,6 +2971,37 @@
 			#sidebar {
 				padding: 30px 20px 30px 20px;
 			}
+
+		/* Athorization */
+			.authorization:before{
+				content: '';
+				border-top: solid 1px;
+				border-bottom: solid 1px;
+				border-color: #171E29;
+				border-color: rgba(0, 0, 0, 0.25);
+				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
+				display: block;
+				height: 0.5em;
+				margin: 1em 0 0.7em 0;
+			}
+
+				.social-authorization{
+					width:48px;
+					height:48px;
+					display: inline-block;
+					margin-left:0.8em;
+
+				}
+
+				.social-vk{
+					background: url("images/social.png") -78px -18px;
+				}
+				.social-fb{
+					background: url("images/social.png") -140px -18px;
+				}
+				.social-tw{
+					background: url("images/social.png") -17px -18px;
+				}
 
 	}
 
@@ -2925,6 +3105,41 @@
 									opacity: 1.0;
 								}
 
+		/* Athorization */
+			.authorization{
+				height:56px;
+			}
+
+			.authorization:before{
+				content: '';
+				border-top: solid 1px;
+				border-bottom: solid 1px;
+				border-color: #171E29;
+				border-color: rgba(0, 0, 0, 0.25);
+				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
+				display: block;
+				height: 0.5em;
+				margin: 1em 0 0.7em 0;
+			}
+
+				.social-authorization{
+					width:48px;
+					height:48px;
+					display: inline-block;
+					margin-left:0.5em;
+
+				}
+
+				.social-vk{
+					background: url("images/social.png") -78px -18px;
+				}
+				.social-fb{
+					background: url("images/social.png") -140px -18px;
+				}
+				.social-tw{
+					background: url("images/social.png") -17px -18px;
+				}
+
 		/* Logo */
 
 			#logo {
@@ -2936,10 +3151,6 @@
 			#nav {
 				margin-top: 0 !important;
 			}
-
-				#nav:before {
-					display: none !important;
-				}
 
 				#nav li:hover a {
 					background: none;
@@ -3047,6 +3258,7 @@
 				min-height: 0 !important;
 			}
 
+
 		/* Sidebar */
 
 			#titleBar {
@@ -3092,26 +3304,7 @@
 	}
 
 
-.lang{
-	height:20px;
-}
 
-#lang_en {
-	float:left;
-	margin: 15px 15px 0px 36px;
-}
-#lang_uk {
-	float:left;
-	margin: 15px 15px 0px 20px;
-}
-
-#lang_uk a img {
-	width:42px;
-}
-
-#lang_en a img {
-	width:42px;
-}
 
 #page {
 	width:100%; 
