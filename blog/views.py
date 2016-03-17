@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from blog.models import Article, Person, Quote
+import random
 
 
 def logout(request):
