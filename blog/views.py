@@ -7,7 +7,6 @@ def logout(request):
     auth_logout(request)
     return redirect('/')
 
-
 class ArticleListView(ListView):
 	model = Article
 	template_name = 'index.html'

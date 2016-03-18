@@ -12,4 +12,6 @@ if settings.DEBUG:
 	    url(r'^article/(?P<pk>\d+)/$', ArticleDetailView.as_view()),
 	    url(r'^archive/$', ArchiveListView.as_view(), name='archive'),
 	    url(r'^about_me/$', PersonPageView.as_view(), name="about_me"),
+    	url(r'^logout/$', 'blog.views.logout'),
+
 	)
