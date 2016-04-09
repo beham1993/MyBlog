@@ -1,7 +1,13 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from blog.models import Article, Person, Quote
+from django.shortcuts import redirect
+from django.contrib.auth import logout as auth_logout
 import random
 
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
 
 class ArticleListView(ListView):
 	model = Article
@@ -49,6 +55,3 @@ class PersonPageView(TemplateView):
 		context ['quote'] = Quote.objects.all()[random_idx]
 		context ['last_article'] = Article.objects.filter().order_by('-date_of_article')[:4]
 		return context
-
-
-

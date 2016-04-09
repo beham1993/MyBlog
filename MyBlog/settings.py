@@ -39,6 +39,26 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',
+    'social.apps.django_app.default',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+   'django.contrib.auth.context_processors.auth',
+   'django.core.context_processors.debug',
+   'django.core.context_processors.i18n',
+   'django.core.context_processors.media',
+   'django.core.context_processors.static',
+   'django.core.context_processors.tz',
+   'django.contrib.messages.context_processors.messages',
+   'social.apps.django_app.context_processors.backends',
+   'social.apps.django_app.context_processors.login_redirect',
+)
+
+AUTHENTICATION_BACKENDS = (
+   'social.backends.facebook.FacebookOAuth2',
+   'social.backends.google.GoogleOAuth2',
+   'social.backends.twitter.TwitterOAuth',
+   'django.contrib.auth.backends.ModelBackend',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,9 +83,9 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-	'USER': 'django',
-	'PASSWORD': 'RghzeqRTMc',
+        'NAME': 'scapedb',
+	'USER': 'beham',
+	'PASSWORD': 'beham333',
 	'HOST': 'localhost',
 	'PORT': '',
     }
@@ -97,7 +117,7 @@ USE_TZ = True
 # Upload Media
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = "/home/django/MyBlog/MyBlog/media"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -124,7 +144,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/django/MyBlog/MyBlog/assets",
+    os.path.join(BASE_DIR, 'assets'),
 )
 
 STATICFILES_FINDERS = (
@@ -147,3 +167,13 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
+
+LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '948779365230332'
+SOCIAL_AUTH_FACEBOOK_SECRET = '3f5bfa2110ebb5d61b63b9e76a398e0f'
+
+SOCIAL_AUTH_TWITTER_KEY = 'oRT5vLFxFocE6gH62G5fomcM7'
+SOCIAL_AUTH_TWITTER_SECRET = 'lXlcvqnvbrzOdGhvqdzWdShjQaaF3brQqUJYypKdCKFGAvgb9s'
