@@ -77,3 +77,11 @@ msgstr "Archive"
 #: templates/index.html:43
 msgid "Читати далі..."
 msgstr "Read more..."
+
+#: templates/index.html:43
+msgid "Джерела"
+msgstr "Sources"
+
+#: templates/index.html:43
+msgid "Ключові слова"
+msgstr "Tags"

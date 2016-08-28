@@ -3,6 +3,16 @@ from django.db import models
 from transmeta import TransMeta
 from ckeditor.fields import RichTextField
 
+class Tag(models.Model):
+	name = models.CharField(max_length=50, verbose_name=u'Теги')
+	def __unicode__(self):
+		return self.name
+
+class Source(models.Model):
+	name = models.URLField(verbose_name=u'Джерела', default='facebook.com')
+	def __unicode__(self):
+		return self.name
+
 class Article(models.Model):
 	__metaclass__ = TransMeta
 	head = models.CharField(max_length=128, verbose_name=u'Заголовок')
@@ -14,6 +24,8 @@ class Article(models.Model):
 	twitters = models.IntegerField(default=0)
 	facebooks = models.IntegerField(default=0)
 	vks = models.IntegerField(default=0)
+	source = models.ManyToManyField(Source)
+	tag = models.ManyToManyField(Tag)
 
 	def __unicode__(self):
 		return self.head

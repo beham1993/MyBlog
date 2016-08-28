@@ -1862,7 +1862,7 @@
 			display: block;
 			max-height:420px;
 			width: 100%;
-			margin: 0 0 2em 0;
+			margin: 0 0 1.2em 0;
 		}
 
 		.image.left {
@@ -1879,6 +1879,12 @@
 				margin: 0 auto;
 				width: auto;
 			}
+
+/* Tags */
+
+	.tags{
+		margin-bottom:5px;
+	}
 
 /* Button */
 
