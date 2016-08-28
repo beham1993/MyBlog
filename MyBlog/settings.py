@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'scapedb',
+        'NAME': 'tatkoDB',
 	'USER': 'beham',
 	'PASSWORD': 'beham333',
 	'HOST': 'localhost',
@@ -122,7 +122,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://46.101.199.68:80/media/'
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
 
 
 # Static files (CSS, JavaScript, Images)

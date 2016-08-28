@@ -99,7 +99,9 @@
 						    </li>
 						    {% else %}
 						    <li class="first">
-						        <a class="social-authorization social-fb" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"></a><a class="social-authorization social-vk" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}"></a><a class="social-authorization social-tw" href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"></a>
+						        <a class="social-authorization social-fb" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"></a>
+						        <a class="social-authorization social-vk" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}"></a>
+						        <a class="social-authorization social-tw" href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"></a>
 						    </li>
 						    {% endif %}
 						</ul>
